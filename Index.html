@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer in Mexico - VIP Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="ambient-light light-green"></div>
+    <div class="ambient-light light-red"></div>
+
+    <div class="controls">
+        <button id="toggleBtn" onclick="toggleLeaflet()">Open Leaflet</button>
+    </div>
+
+    <div class="scene" id="leafletScene">
+        
+        <div class="leaflet">
+            
+            <div class="panel interior-center-panel" data-panel="center">
+                <div class="premium-header">
+                    <h2>C. International Sports</h2>
+                </div>
+                
+                <div class="panel-content">
+                    <img src="https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Soccer on the field" class="premium-img">
+
+                    <p><strong>When did people start doing it?</strong><br>
+                    Soccer was introduced to Mexico in the late 19th century. The first games were organized by English miners in cities like Pachuca.</p>
+
+                    <p><strong>Why did it become popular?</strong><br>
+                    It became incredibly popular because it requires minimal equipment. Over time, it grew into a fundamental trait of our cultural identity.</p>
+
+                    <p><strong>Basic Rules & Equipment:</strong><br>
+                    Played with 11 players per team on a grass field. The fundamental rule is simple: no hands allowed (except for the goalkeeper)! All you need to play is a ball and two goals.</p>
+
+                    <div class="interactive-game premium-card">
+                        <p class="game-title">⚽ Interactive: Shoot-Out Challenge!</p>
+                        <div class="field-box mini-stadium">
+                            <span id="soccerBall" class="ball ball-3d">⚽</span>
+                            <span id="goalkeeper" class="goalkeeper gk-3d">🧍‍♂️</span>
+                            <span class="goal-posts">🥅</span>
+                        </div>
+                        <button class="game-btn premium-btn-red" onclick="shootGoal()">Take the shot!</button>
+                        <p id="goalMessage" class="game-message premium-alert"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-cover exterior-cover"></div>
+
+            <div class="panel interior-right-panel" data-panel="right">
+                <div class="premium-header">
+                    <h2>2. Conclusion</h2>
+                </div>
+                
+                <div class="panel-content">
+                    <p><strong>Summary:</strong> Soccer is the heartbeat of Mexican sports culture, uniting people of all ages.</p>
+                    <p><strong>Our Invitation:</strong> We invite you to watch a "Clásico" match or join a local pick-up game to experience the magic yourself!</p>
+
+                    <hr class="premium-divider">
+
+                    <div class="quiz-area premium-card">
+                        <h3>3. Mini-Quiz</h3>
+                        <div class="quiz-container">
+                            <div class="quiz-question premium-card-light">
+                                <p><strong>1. Who brought soccer to Mexico?</strong></p>
+                                <label><input type="radio" name="q1" value="wrong"> Spanish Explorers</label>
+                                <label><input type="radio" name="q1" value="correct" id="q1Correct"> English Miners</label>
+                            </div>
+
+                            <div class="quiz-question premium-card-light">
+                                <p><strong>2. What is our top league called?</strong></p>
+                                <label><input type="radio" name="q2" value="wrong"> MLS</label>
+                                <label><input type="radio" name="q2" value="correct" id="q2Correct"> Liga MX</label>
+                            </div>
+
+                            <button class="quiz-btn premium-btn-green" onclick="checkAnswers()">Submit Answers</button>
+                            <p id="quizResult" class="quiz-result premium-alert"></p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
+                        <h3 style="color: var(--gold-accent); font-size: 15px; margin-bottom: 10px; text-transform: uppercase;">Scan For More!</h3>
+                        
+                        <div style="background: #ffffff; padding: 10px; border-radius: 10px; display: inline-block; box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); border: 3px solid var(--gold-accent);">
+                            <img src="qr.png" alt="QR Code" style="width: 130px; height: 130px; display: block;">
+                        </div>
+                        
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-muted);">Scan with your phone to watch the best goals in history.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="front-cover exterior-cover" id="frontCover">
+                <div class="vip-tag">ALL ACCESS</div>
+
+                <div class="cover-design">
+                    <img src="https://images.pexels.com/photos/47730/the-ball-stadion-football-the-pitch-47730.jpeg?auto=compress&cs=tinysrgb&h=150&w=150&fit=crop" alt="Soccer Ball Close-up" class="cover-img premium-border">
+                    <h1 class="premium-title">Soccer in Mexico</h1>
+                    <p class="subtitle">Discover the passion of our favorite sport.</p>
+                    <div class="creators premium-card-dark">
+                        <strong>Collector's Edition:</strong><br>
+                        Sánchez Ávila Emiliano<br>
+                        Martínez Espinoza Emiliano<br>
+                        González Gutiérrez Sergio Iván<br>
+                        Moreno Rosales Sebastián Gael
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel interior-left-panel" data-panel="left">
+                <div class="premium-header">
+                    <h2>1. Introduction</h2>
+                </div>
+                
+                <div class="panel-content">
+                    <p><em>"In my country, people enjoy many sports and hobbies. One interesting example is soccer."</em></p>
+                    <p>Here in Mexico, it is a massive cultural phenomenon. It goes beyond just a game; it is an event that brings communities and families together every weekend.</p>
+                    
+                    <hr class="premium-divider" style="margin: 15px 0;">
+                    
+                    <h3 style="font-size: 14px; text-align: center; color: var(--gold-accent);">Top Mexican Legends</h3>
+                    <div class="legends-container">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=150');">
+                                    <span>#9</span>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Hugo<br>Sánchez</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=150');">
+                                    <span>#4</span>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Rafa<br>Márquez</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://images.pexels.com/photos/3148452/pexels-photo-3148452.jpeg?auto=compress&cs=tinysrgb&w=150');">
+                                    <span>#14</span>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Javier<br>"Chicharito"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>Who plays it?</strong><br>
+                    Absolutely everyone! You will see young children playing in the streets, teenagers in school tournaments, and adults in Sunday leagues.</p>
+                </div>
+            </div>
+
+        </div> 
+
+        <div class="premium-background-central-back">
+            <div class="aztec-pattern"></div>
+        </div>
+
+    </div> 
+
+    <script>
+        function toggleLeaflet() {
+            const scene = document.getElementById('leafletScene');
+            const btn = document.getElementById('toggleBtn');
+            if (scene.classList.contains('is-open')) {
+                scene.classList.remove('is-open');
+                btn.innerText = "Open Leaflet";
+            } else {
+                scene.classList.add('is-open');
+                btn.innerText = "Close Leaflet";
+            }
+        }
+
+        function shootGoal() {
+            const ball = document.getElementById('soccerBall');
+            const gk = document.getElementById('goalkeeper');
+            const msg = document.getElementById('goalMessage');
+            
+            if(ball.classList.contains('ball-kick') || ball.classList.contains('ball-saved')) return;
+            
+            const isGoal = Math.random() > 0.5;
+            const diveDirection = Math.random() > 0.5 ? 22 : -22; 
+
+            if (isGoal) {
+                ball.classList.add('ball-kick');
+                gk.style.transform = `translateY(${diveDirection}px)`; 
+                setTimeout(() => {
+                    msg.innerText = "GOOOOOAL! 🎉";
+                    msg.className = "game-message premium-alert success";
+                    msg.style.display = 'block';
+                }, 500);
+            } else {
+                ball.classList.add('ball-saved');
+                gk.style.transform = `scale(1.4)`; 
+                setTimeout(() => {
+                    msg.innerText = "SAVED BY THE KEEPER! 🧤";
+                    msg.className = "game-message premium-alert error";
+                    msg.style.display = 'block';
+                }, 400);
+            }
+            
+            setTimeout(() => {
+                ball.classList.remove('ball-kick');
+                ball.classList.remove('ball-saved');
+                gk.style.transform = `translateY(0) scale(1)`; 
+                msg.style.display = 'none';
+            }, 2500);
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            const q1 = document.getElementById('q1Correct').checked;
+            const q2 = document.getElementById('q2Correct').checked;
+            
+            if (q1) score++;
+            if (q2) score++;
+
+            const resultText = document.getElementById('quizResult');
+            resultText.style.display = 'block';
+            if (score === 2) {
+                resultText.className = "quiz-result premium-alert success";
+                resultText.innerText = "Score: 2/2! 🏆 Champion!";
+            } else if (score === 1) {
+                resultText.className = "quiz-result premium-alert warning";
+                resultText.innerText = "Score: 1/2. Try again!";
+            } else {
+                resultText.className = "quiz-result premium-alert error";
+                resultText.innerText = "Score: 0/2. Try again! ⚽";
+            }
+        }
+    </script>
+</body>
+</html>
